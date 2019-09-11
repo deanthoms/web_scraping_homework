@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Homework</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class = "container">
+        
+        <div class="jumbotron text-center">
+            <h1> Mission to Mars </h1>  
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        </div>
+
+        <div class="row">
+            <div class = 'col-md-12'>
+                <h3> Latest Mars News </h3>
+                <p>{{mars_info.news_title}}</p>
+                <p>{{mars_info.news_p}}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class = 'col-md-8'>
+                <h3> Featured Mars Image </h3>
+                <img src = {{mars_info.featured_image_url}} class='img-responsive' alt='Featured Image'>
+            </div>
+            <div class = 'col-md-4'>
+                <div class = 'card border-right-0' style = "width: 24rem;">
+                    <div class = 'card_body'>
+                        <h5> Current Weather on Mars </h5>
+                        <p class = 'card-text'> {{mars_info.mars_weather}} </p>
+                    </div>
+                </div>
+                <div>
+                    <h5> Mars Facts </h5>
+                    {{table|safe}}
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class = "row">
+            <div class = 'col-md-12'>
+                <h2 class = "text-center"> Mars Hemispheres </h2>
+                <hr size = '10'>
+                <div class = 'row'>
+                    <div class = "col-md-6">
+                        <div class = 'card'>
+                            <img src = {{mars_info.hemisphere_image_urls[0].url}} class = "card-img-top" width="450 px"> 
+                            <div class = 'card_body'>  
+                                <p class = 'card-text'> {{mars_info.hemisphere_image_urls[0].title}} </p> 
+                            </div>    
+                        </div>
+                        <div class = 'card'>
+                            <img src = {{mars_info.hemisphere_image_urls[1].url}} class = "card-img-top" width="450 px"> 
+                            <div class = 'card_body'>    
+                                <p class = 'card-text'> {{mars_info.hemisphere_image_urls[1].title}} </p> 
+                            </div>    
+                        </div>
+                    </div>
+                    <div class = "col-md-6">
+                        <div class = 'card'>
+                            <img src = {{mars_info.hemisphere_image_urls[2].url}} class = "card-img-top" width="450 px"> 
+                            <div class = 'card_body'>    
+                                <p class = 'card-text'> {{mars_info.hemisphere_image_urls[2].title}} </p> 
+                            </div>    
+                        </div>
+                        <div class = 'card'>
+                            <img src = {{mars_info.hemisphere_image_urls[3].url}} class = "card-img-top" width="450 px"> 
+                            <div class = 'card_body'>    
+                                <p class = 'card-text'> {{mars_info.hemisphere_image_urls[3].title}} </p> 
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
